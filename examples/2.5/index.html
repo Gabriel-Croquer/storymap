@@ -56,14 +56,8 @@
                 <h2>scene 5
                     fsdfsadfasdfasfdsafasdf
                 </h2>
-            </section>
-            <section class="scene-without-map" data-scene="scene4">
-                <div class="container">
-                    <h2>Scene 4</h2>
-                    <p>Content for scene 4.</p>
-                </div>
-                <div class="content">
-                    <p>In one of these lives I found last wednesday (3), I scraped 100 comments in 10 minutes. 
+                <p>Content for scene 4.</p>
+                     <p>In one of these lives I found last wednesday (3), I scraped 100 comments in 10 minutes. 
                             In this period, the message "this platform is very good" appeared 22 times, posted by 9 two different accounts, and 29 authors published comments.</p>
                         <div class="flourish-embed flourish-scatter" data-src="visualisation/18662313"><script src="https://public.flourish.studio/resources/embed.js"></script></div>        
                 
@@ -82,7 +76,6 @@
                             <video src="video_coment.mp4" preload="auto" tabindex="0" playsinline autoplay loop muted></video>
                             <figcaption>You see? The amount of replies with no meaning at all to the main comment promoting "Fortune Tiger".</figcaption>
                         </figure>
-                    </div>
             </section>
         
         </div>
@@ -100,26 +93,19 @@
                 color: 'red',
                 weight: 5
             }),
-            legend: '<i style="background: orange; opacity: 0.5"></i><p><b>Pantanal biome</b></p>'
+            legend: '<i style="background: red; opacity: 0.5"></i><p><b>Pantanal biome</b></p>'
         },
         layer3: {
             layer: L.tileLayer('http://cartodb-basemaps-{s}.global.ssl.fastly.net/light_all/{z}/{x}/{y}.png')
         },
         
-        layer4: {  // New layer added
-        layer: L.geoJson.ajax('../../assets/aq.json', {
-            color: 'black',
-            weight: 5
-        }),
-        legend: '<i style="background: blue; opacity: 0.5"></i><p><b>New Layer</b></p>'
-    }
     };
 
     var scenes = {
     scene1: {lat: -14.2350, lng: -51.9253, zoom: 5, layers: [layers.layer1], name: "scene 1"},
     scene2: {lat: -18.8800, lng: -56.0900, zoom: 6, layers: [layers.layer1, layers.layer2], name: "scene 2"},
-    scene3: {lat: -18.8800, lng: -56.0900, zoom: 6, layers: [layers.layer1, layers.layer2, layers.layer4], name: "scene 2"},
-    scene5: {lat: -18.8800, lng: -56.0900, zoom: 6, layers: [layers.layer1, layers.layer2, layers.layer4], name: "scene 5"}
+    scene3: {lat: -18.8800, lng: -56.0900, zoom: 6, layers: [layers.layer1, layers.layer2], name: "scene 2"},
+    scene5: {lat: -18.8800, lng: -56.0900, zoom: 6, layers: [layers.layer1, layers.layer2], name: "scene 5"}
 };
 
     $('#storymap').storymap({
