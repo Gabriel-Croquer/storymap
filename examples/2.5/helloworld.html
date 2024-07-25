@@ -34,7 +34,8 @@
     <script src="../../dist/storymap.2.5.js"></script>
 </head>
 <body>
-<h1> Teste dsa</h1>
+<h1> Teste dsa </h1>
+
 
 <div id="storymap" class="container-fluid">
     <div class="row">
@@ -47,8 +48,38 @@
                 <h2>scene 2</h2>
             </section>
             <section data-scene="scene3">
-                <h2>scene 3</h2>
+                <h2>scene 3
+                    fsdfsadfasdfasfdsafasdf
+                </h2>
             </section>
+            <section class="scene-without-map" data-scene="scene4">
+                <div class="container">
+                    <h2>Scene 4</h2>
+                    <p>Content for scene 4.</p>
+                </div>
+                <div class="content">
+                    <p>In one of these lives I found last wednesday (3), I scraped 100 comments in 10 minutes. 
+                            In this period, the message "this platform is very good" appeared 22 times, posted by 9 two different accounts, and 29 authors published comments.</p>
+                        <div class="flourish-embed flourish-scatter" data-src="visualisation/18662313"><script src="https://public.flourish.studio/resources/embed.js"></script></div>        
+                
+                        <p>I scraped the live again, and reached to 100 new comments quickly. But they weren't actually new. They were really almost the same to the result I got scraping it before.<p>
+                
+                        <div class="flourish-embed flourish-scatter" data-src="visualisation/18662313"><script src="https://public.flourish.studio/resources/embed.js"></script></div> 
+                
+                        <h3>Ok... So we have robots commenting on lives.</h3>
+                
+                        <p>But something crazy I noticed when looking at commentaries on very popular footbal videos
+                            -- not lives, actually published videos -- is that there seem to be bots liking and commenting another comment,
+                            that says: "How to do 100 to 1000 a day!!!!", and, further in the replies, links to the "Fortune Tiger" fraud.</p>
+                        <h3>Let's take a look at these bots!</h3>
+                    <div class="full-width">
+                        <figure>
+                            <video src="video_coment.mp4" preload="auto" tabindex="0" playsinline autoplay loop muted></video>
+                            <figcaption>You see? The amount of replies with no meaning at all to the main comment promoting "Fortune Tiger".</figcaption>
+                        </figure>
+                    </div>
+            </section>
+        
         </div>
 
     </div>
@@ -61,7 +92,7 @@
         },
         layer2: {
             layer: L.geoJson.ajax('../../assets/lm_bioma_250.json', {
-                color: 'orange',
+                color: 'red',
                 weight: 5
             }),
             legend: '<i style="background: orange; opacity: 0.5"></i><p><b>Pantanal biome</b></p>'
@@ -74,7 +105,7 @@
     var scenes = {
     scene1: {lat: -14.2350, lng: -51.9253, zoom: 5, layers: [layers.layer1], name: "scene 1"},
     scene2: {lat: -18.8800, lng: -56.0900, zoom: 6, layers: [layers.layer1, layers.layer2], name: "scene 2"},
-    scene3: {lat: -18.8800, lng: -56.0900, zoom: 9, layers: [layers.layer1, layers.layer2], name: "scene 2"} 
+    scene3: {lat: -18.8800, lng: -56.0900, zoom: 9, layers: [layers.layer1, layers.layer2], name: "scene 2"},
 };
 
     $('#storymap').storymap({
@@ -94,6 +125,8 @@
             return map;
         }
     });
+    $('.scene-without-map').hide();
+
 </script>
 </body>
 </html>
