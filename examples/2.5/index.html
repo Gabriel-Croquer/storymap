@@ -42,13 +42,18 @@
         <div class="col-sm-6 col-md-8 storymap-map"></div>
         <div class="col-sm-6 col-md-4 storymap-story">
             <section data-scene="scene1">
-                <h2>scene 1</h2>
+                <h2>Intro</h2>
             </section>
             <section data-scene="scene2">
                 <h2>scene 2</h2>
             </section>
             <section data-scene="scene3">
                 <h2>scene 3
+                    fsdfsadfasdfasfdsafasdf
+                </h2>
+            </section>
+            <section data-scene="scene5">
+                <h2>scene 5
                     fsdfsadfasdfasfdsafasdf
                 </h2>
             </section>
@@ -99,13 +104,22 @@
         },
         layer3: {
             layer: L.tileLayer('http://cartodb-basemaps-{s}.global.ssl.fastly.net/light_all/{z}/{x}/{y}.png')
-        }
+        },
+        
+        layer4: {  // New layer added
+        layer: L.geoJson.ajax('../../assets/aq.json', {
+            color: 'black',
+            weight: 5
+        }),
+        legend: '<i style="background: blue; opacity: 0.5"></i><p><b>New Layer</b></p>'
+    }
     };
 
     var scenes = {
     scene1: {lat: -14.2350, lng: -51.9253, zoom: 5, layers: [layers.layer1], name: "scene 1"},
     scene2: {lat: -18.8800, lng: -56.0900, zoom: 6, layers: [layers.layer1, layers.layer2], name: "scene 2"},
-    scene3: {lat: -18.8800, lng: -56.0900, zoom: 6, layers: [layers.layer1, layers.layer2], name: "scene 2"},
+    scene3: {lat: -18.8800, lng: -56.0900, zoom: 6, layers: [layers.layer1, layers.layer2, layers.layer4], name: "scene 2"},
+    scene5: {lat: -18.8800, lng: -56.0900, zoom: 6, layers: [layers.layer1, layers.layer2, layers.layer4], name: "scene 5"}
 };
 
     $('#storymap').storymap({
